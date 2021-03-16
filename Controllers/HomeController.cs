@@ -33,5 +33,6 @@ namespace TempleSignUp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        //Here is a change.
     }
 }
