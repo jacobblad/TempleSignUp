@@ -11,5 +11,6 @@ namespace TempleSignUp.Models
         [Key]
         public int AvailableTimeId { get; set; }
         public DateTime TimeSlot { get; set; }
+        public bool Available { get; set; } = true;
     }
 }

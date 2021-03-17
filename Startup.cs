@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TempleSignUp.Models;
 
 namespace TempleSignUp
 {
@@ -24,6 +26,15 @@ namespace TempleSignUp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<TempleDbContext>(options =>
+            {
+                options.UseSqlite(Configuration["ConnectionStrings:TempleConnection"]);
+            });
+
+            services.AddScoped<ITempleRepository, EFTempleRepository>();
+
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +62,13 @@ namespace TempleSignUp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }
