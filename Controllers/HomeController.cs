@@ -66,7 +66,6 @@ namespace TempleSignUp.Controllers
             
 
             //DateTime apptTime = at.TimeSlot;
-            ViewBag.Time = Request["at.TimeSlot"].ToString();
 
             return View("EnterInfo"/*, apptTime*/);
         }
