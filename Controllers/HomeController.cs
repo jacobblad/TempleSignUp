@@ -22,13 +22,25 @@ namespace TempleSignUp.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public IActionResult EnterInfo()
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult EnterInfo(Group g)
+        {
+            return View("Index");
+        }
 
+        [HttpGet]
         public IActionResult SignUp()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public IActionResult SignUp(AvailableTime at)
         {
             return View();
         }
