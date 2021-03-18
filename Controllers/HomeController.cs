@@ -44,7 +44,6 @@ namespace TempleSignUp.Controllers
         [HttpPost]
         public IActionResult EnterInfo(Group g)
         {
-            g.Time = ViewBag.Time;
             context.Groups.Add(g);
             context.SaveChanges();
 
@@ -60,9 +59,11 @@ namespace TempleSignUp.Controllers
             });
         }
         [HttpPost]
-        public IActionResult SignUp(AvailableTime at)
+        public IActionResult SignUp(DateTime TimeSlot)
         {
-            ViewBag.Time = at.TimeSlot;
+            ViewBag.Time = TimeSlot;
+
+            
 
             //DateTime apptTime = at.TimeSlot;
 

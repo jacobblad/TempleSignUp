@@ -5,13 +5,27 @@
 
 @foreach (var x in Model.AvailableTimes)
 {
-    <div class="card">
-        <h5 class="card-header">@x.TimeSlot
-            <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
-                <input type="hidden" value="@x.TimeSlot" name="@x.TimeSlot"/>
-                <button type="submit" class="btn-primary btn-sm pull-right" style="float:right">Select Time</button>
-            </form>
+<div class="card">
+    @if (x.Available == true)
+    {
+        <h5 class="card-header">
+            @x.TimeSlot
+        <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
+            <input type="hidden" value="@x.TimeSlot" name="TimeSlot" id="TimeSlot" />
+            <button type="submit" class="btn-primary btn-sm pull-right" onclick="@{x.Available = false;}" style="float:right">Select Time</button>
+        </form>
         </h5>
-    </div>
+    }
+    @if (x.Available == false)
+    {
+        <h5 class="card-header">
+            @x.TimeSlot
+        <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
+            <input type="hidden" value="@x.TimeSlot" name="TimeSlot" id="TimeSlot" />
+            <button type="button" class="btn-danger btn-sm pull-right" style="float:right">Unavailable</button>
+        </form>
+        </h5>
+    }
+</div>
     <br />
 }
