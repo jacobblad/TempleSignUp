@@ -23,6 +23,16 @@ namespace TempleSignUp.Controllers
             return View();
         }
 
+        public IActionResult EnterInfo()
+        {
+            return View();
+        }
+
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
         public IActionResult ViewAppointments()
         {
             return View();
