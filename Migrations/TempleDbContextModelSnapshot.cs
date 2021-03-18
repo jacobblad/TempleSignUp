@@ -16,23 +16,6 @@ namespace TempleSignUp.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.4");
 
-            modelBuilder.Entity("TempleSignUp.Models.AvailableTime", b =>
-                {
-                    b.Property<int>("AvailableTimeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Available")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("TimeSlot")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("AvailableTimeId");
-
-                    b.ToTable("AvailableTimes");
-                });
-
             modelBuilder.Entity("TempleSignUp.Models.Group", b =>
                 {
                     b.Property<int>("GroupId")
@@ -54,6 +37,23 @@ namespace TempleSignUp.Migrations
                     b.HasKey("GroupId");
 
                     b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("TempleSignUp.Models.ViewModels.AvailableTime", b =>
+                {
+                    b.Property<int>("AvailableTimeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Available")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("TimeSlot")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AvailableTimeId");
+
+                    b.ToTable("AvailableTimes");
                 });
 #pragma warning restore 612, 618
         }
