@@ -5,14 +5,14 @@
 
 @foreach (var x in Model.AvailableTimes)
 {
-<div class="card">
-    <h5 class="card-header">@x.TimeSlot
-        <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
-            <input type="hidden" asp-for="@x.TimeSlot" />
-            <input type="hidden" />
-                <button type="submit" class="btn-primary btn-sm pull-right" style="float:right">Select Time</button>
-        </form>
-    </h5>
-</div>
+    <div class="card">
+        <h5 class="card-header">@x.TimeSlot
+            <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
+                <input type="hidden" asp-for="@x.TimeSlot" />
+                <input type="hidden" />
+                    <button type="submit" class="btn-primary btn-sm pull-right" style="float:right">Select Time</button>
+            </form>
+        </h5>
+    </div>
     <br />
 }
