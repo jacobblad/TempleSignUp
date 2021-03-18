@@ -1,8 +1,9 @@
-﻿@ViewBag.Title = "Sign Up"
+﻿@using TempleSignUp.Models.ViewModels
+@ViewBag.Title = "Sign Up"
 
-@model IEnumerable<AvailableTime>
+@model TimeListViewModel
 
-@foreach (AvailableTime x in Model)
+@foreach (var x in Model.AvailableTimes)
 {
 <div class="card">
     <h5 class="card-header">@x.TimeSlot</h5>
