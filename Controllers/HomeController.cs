@@ -14,9 +14,12 @@ namespace TempleSignUp.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private ITempleRepository _repository;
+
+        public HomeController(ILogger<HomeController> logger, ITempleRepository repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         public IActionResult Index()
@@ -39,7 +42,7 @@ namespace TempleSignUp.Controllers
         {
             return View(new TimeListViewModel
             {
-                AvailableTimes = _repository.
+                AvailableTimes = _repository.AvailableTimes
             });
         }
         [HttpPost]
