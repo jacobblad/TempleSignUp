@@ -48,14 +48,19 @@ namespace TempleSignUp.Controllers
         [HttpPost]
         public IActionResult SignUp(AvailableTime at)
         {
-            DateTime apptTime = at.TimeSlot;
+            ViewBag.Time = at.TimeSlot;
 
-            return View("EnterInfo", apptTime);
+            //DateTime apptTime = at.TimeSlot;
+
+            return View("EnterInfo"/*, apptTime*/);
         }
 
         public IActionResult ViewAppointments()
         {
-            return View();
+            return View(new TimeListViewModel
+            {
+                Groups = _repository.Groups
+            });
         }
 
         public IActionResult Privacy()

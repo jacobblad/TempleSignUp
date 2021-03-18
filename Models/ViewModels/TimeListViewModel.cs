@@ -8,5 +8,6 @@ namespace TempleSignUp.Models.ViewModels
     public class TimeListViewModel
     {
         public IEnumerable<AvailableTime> AvailableTimes { get; set; }
+        public IEnumerable<Group> Groups { get; set; }
     }
 }

@@ -7,10 +7,15 @@
 {
 <div class="card">
     <h5 class="card-header">@x.TimeSlot
-        <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
+        @*<form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
             <input type="hidden" asp-for="@x.TimeSlot" />
             <input type="hidden" />
                 <button type="submit" class="btn-primary btn-sm pull-right" style="float:right">Select Time</button>
+        </form>*@
+
+        <form asp-action="SignUp" method="post">
+            <input type="hidden" asp-for="@x.AvailableTimeId" />
+            <button type="submit" class="btn-primary btn-sm pull-right" style="float:right">Select Time</button>
         </form>
     </h5>
 </div>
