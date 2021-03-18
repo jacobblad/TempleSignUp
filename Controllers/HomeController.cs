@@ -62,9 +62,10 @@ namespace TempleSignUp.Controllers
         [HttpPost]
         public IActionResult SignUp(AvailableTime at)
         {
-            ViewBag.Time = at.TimeSlot;
+            //ViewBag.Time = at.TimeSlot;
 
             //DateTime apptTime = at.TimeSlot;
+            ViewBag.Time = Request["at.TimeSlot"].ToString();
 
             return View("EnterInfo"/*, apptTime*/);
         }
