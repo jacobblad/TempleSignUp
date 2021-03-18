@@ -9,8 +9,8 @@ using TempleSignUp.Models;
 namespace TempleSignUp.Migrations
 {
     [DbContext(typeof(TempleDbContext))]
-    [Migration("20210318022647_initial")]
-    partial class initial
+    [Migration("20210318055312_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -35,6 +35,9 @@ namespace TempleSignUp.Migrations
 
                     b.Property<int>("Size")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("TEXT");
 
                     b.HasKey("GroupId");
 

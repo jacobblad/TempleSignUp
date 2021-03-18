@@ -1,4 +1,4 @@
-﻿@ViewBag.Title = "Booked Appointments"
+﻿@{ViewBag.Title = "Booked Appointments";}
 
 @model TimeListViewModel;
 
@@ -7,7 +7,7 @@
     <div class="card">
         <h5 class="card-header">@x.Name</h5>
         <div class="card-body">
-            @*<p class="card-text">Time Slot: @ViewBag.Time</p>*@
+            <p class="card-text">Time Slot: @x.Time</p>
             <p class="card-text">Group Size: @x.Size</p>
             <p class="card-text">Email: @x.Email</p>
             <p class="card-text">Phone: @x.Phone</p>

@@ -34,6 +34,9 @@ namespace TempleSignUp.Migrations
                     b.Property<int>("Size")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("GroupId");
 
                     b.ToTable("Groups");
