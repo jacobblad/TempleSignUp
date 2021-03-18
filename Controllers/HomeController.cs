@@ -23,6 +23,11 @@ namespace TempleSignUp.Controllers
             return View();
         }
 
+        public IActionResult ViewAppointments()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
@@ -33,6 +38,8 @@ namespace TempleSignUp.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        //Here is a change.
+        
+
+
     }
 }
