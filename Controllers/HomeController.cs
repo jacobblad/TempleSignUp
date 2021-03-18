@@ -16,6 +16,8 @@ namespace TempleSignUp.Controllers
 
         private ITempleRepository _repository;
 
+        private AvailableTime _availableTime;
+
         public HomeController(ILogger<HomeController> logger, ITempleRepository repository)
         {
             _logger = logger;
@@ -29,7 +31,12 @@ namespace TempleSignUp.Controllers
         [HttpGet]
         public IActionResult EnterInfo()
         {
-            return View();
+
+            return View(_availableTime);
+            //return View(new TimeListViewModel
+            //{
+            //    AvailableTimes = _repository.AvailableTimes
+            //});
         }
         [HttpPost]
         public IActionResult EnterInfo(Group g)
