@@ -37,8 +37,10 @@ namespace TempleSignUp.Controllers
         [HttpGet]
         public IActionResult SignUp()
         {
-
-            return View();
+            return View(new TimeListViewModel
+            {
+                AvailableTimes = _repository.
+            });
         }
         [HttpPost]
         public IActionResult SignUp(AvailableTime at)
