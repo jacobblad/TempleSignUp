@@ -1,0 +1,23 @@
+﻿@ViewBag.Title = "Sign Up"
+
+@model IEnumerable<AvailableTime>
+
+@foreach (AvailableTime x in Model)
+{
+<div class="card">
+    <h5 class="card-header">@x.TimeSlot</h5>
+
+    <form asp-action="" method="post" id="@x.TimeSlot">
+        <input type="hidden" asp-for="@x.TimeSlot" />   <!-- name="TimeSlot" -->
+        value="@x.TimeSlot" />
+
+        <button type="submit" class="btn btn-outline-success" style="float:right">
+            Select Time
+        </button>
+
+    </form>
+
+
+</div>
+    <br />
+}

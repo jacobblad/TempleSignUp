@@ -1,0 +1,24 @@
+﻿<!--Display time-->
+@model TempleSignUp.Models.Group
+
+<form asp-action="Index" method="post">
+
+        <h1>Enter Information</h1>
+        <p>Please enter your information in the form below.</p>
+        <hr>
+
+        <label asp-for="@Model.Name"><b>Group Name</b></label>
+        <input asp-for="@Model.Name" placeholder="Enter Group Name" required>
+
+        <label asp-for="@Model.Size"><b>Group Size</b></label>
+        <input asp-for="@Model.Size" placeholder="Enter Group Size" required>
+
+        <label asp-for="@Model.Email"><b>Email</b></label>
+        <input asp-for="@Model.Email" placeholder="Enter Contact Email" required>
+
+        <label asp-for="@Model.Phone"><b>Phone Number</b></label>
+        <input asp-for="@Model.Phone" placeholder="Enter Contact Phone Number" optional>
+
+            <button type="submit" class="signupbtn">Sign Up</button>
+      
+</form>
