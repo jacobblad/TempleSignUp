@@ -1,12 +1,13 @@
 ﻿@ViewBag.Title = "Booked Appointments"
 
-@model IEnumerable<Group>
+@model TimeListViewModel;
 
-@foreach (Group x in Model)
+@foreach (var x in Model.Groups)
 {
     <div class="card">
         <h5 class="card-header">@x.Name</h5>
         <div class="card-body">
+            @*<p class="card-text">Time Slot: @ViewBag.Time</p>*@
             <p class="card-text">Group Size: @x.Size</p>
             <p class="card-text">Email: @x.Email</p>
             <p class="card-text">Phone: @x.Phone</p>
