@@ -9,31 +9,14 @@ using TempleSignUp.Models;
 namespace TempleSignUp.Migrations
 {
     [DbContext(typeof(TempleDbContext))]
-    [Migration("20210317050058_Initial")]
-    partial class Initial
+    [Migration("20210318022647_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.4");
-
-            modelBuilder.Entity("TempleSignUp.Models.AvailableTime", b =>
-                {
-                    b.Property<int>("AvailableTimeId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Available")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("TimeSlot")
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("AvailableTimeId");
-
-                    b.ToTable("AvailableTimes");
-                });
 
             modelBuilder.Entity("TempleSignUp.Models.Group", b =>
                 {
@@ -56,6 +39,23 @@ namespace TempleSignUp.Migrations
                     b.HasKey("GroupId");
 
                     b.ToTable("Groups");
+                });
+
+            modelBuilder.Entity("TempleSignUp.Models.ViewModels.AvailableTime", b =>
+                {
+                    b.Property<int>("AvailableTimeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Available")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("TimeSlot")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AvailableTimeId");
+
+                    b.ToTable("AvailableTimes");
                 });
 #pragma warning restore 612, 618
         }
