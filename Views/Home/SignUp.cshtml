@@ -4,6 +4,8 @@
 @model TimeListViewModel
 
 @foreach (var x in Model.AvailableTimes)
+
+    //Loop through and display available times for selection
 {
 <div class="card">
     @if (x.Available == true)
@@ -17,6 +19,8 @@
         </h5>
     }
     @if (x.Available == false)
+
+        //loop through and display unavailable times
     {
         <h5 class="card-header">
             @x.TimeSlot
