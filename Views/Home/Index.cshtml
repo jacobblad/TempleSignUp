@@ -3,16 +3,15 @@
     //I changed this to ViewBag.Title
 }
 
-<h1>@ViewBag.Title</h1>
+<br />
+<img width="65%" src="~/img/layton-utah-temple.jpg" />
+<br /><br />
 
-<br />
-<img width="60%" src="~/img/layton-utah-temple.jpg" />
-<br />
 
 <h4>Welcome to the Layton, UT Temple Tours Webpage!</h4>
 <p>We have tours every hour on the hour between 8 AM and 8 PM. Our address is 175 N 300 E, Logan, UT 84321</p>
     <br/>
 <p>Please sign up for a tour below!</p>
 <div>
-    <a class="btn btn-primary" asp-controller="Home" asp-action="SignUp">Sign Up</a>
+    <a class="btn btn-primary" @*asp-controller="Home"*@ asp-action="SignUp">Sign Up</a>
 </div>
