@@ -55,6 +55,7 @@ namespace TempleSignUp.Controllers
         {
             return View(new TimeListViewModel
             {
+
                 AvailableTimes = _repository.AvailableTimes
             });
         }
@@ -62,8 +63,10 @@ namespace TempleSignUp.Controllers
         public IActionResult SignUp(DateTime TimeSlot)
         {
             ViewBag.Time = TimeSlot;
+            context.AvailableTimes
+                .Where(p => p.TimeSlot == TimeSlot).FirstOrDefault().Available = false;
+            context.SaveChanges();
 
-            
 
             //DateTime apptTime = at.TimeSlot;
 
