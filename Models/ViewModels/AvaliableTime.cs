@@ -8,6 +8,7 @@ namespace TempleSignUp.Models.ViewModels
 {
     public class AvailableTime
     {
+        //setting the times table
         [Key]
         public int AvailableTimeId { get; set; }
         public DateTime TimeSlot { get; set; }

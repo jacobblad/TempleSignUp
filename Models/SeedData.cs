@@ -9,6 +9,7 @@ using TempleSignUp.Models.ViewModels;
 
 namespace TempleSignUp.Models
 {
+    //populating the database with data
     public class SeedData
     {
         public static void EnsurePopulated(IApplicationBuilder application)
@@ -20,7 +21,7 @@ namespace TempleSignUp.Models
             {
                 context.Database.Migrate();
             }
-
+            //Adding a new group
             if (!context.Groups.Any())
             {
                 context.Groups.AddRange(
@@ -33,7 +34,7 @@ namespace TempleSignUp.Models
                         Phone = "801-123-1776"
                     });
             }
-
+            //Populating the available times
             if (!context.AvailableTimes.Any())
             {
                 context.AvailableTimes.AddRange(

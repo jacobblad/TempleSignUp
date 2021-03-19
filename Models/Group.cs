@@ -8,6 +8,7 @@ namespace TempleSignUp.Models
 {
     public class Group
     {
+        //Setting the Group table
         [Key]
         public int GroupId { get; set; }
         public string Name { get; set; }
