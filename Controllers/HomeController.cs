@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using TempleSignUp.Models;
 using TempleSignUp.Models.ViewModels;
 
+//Home Controller that works with the models and views
+
 namespace TempleSignUp.Controllers
 {
     public class HomeController : Controller
@@ -36,11 +38,8 @@ namespace TempleSignUp.Controllers
         {
 
             return View(_availableTime);
-            //return View(new TimeListViewModel
-            //{
-            //    AvailableTimes = _repository.AvailableTimes
-            //});
         }
+
         [HttpPost]
         public IActionResult EnterInfo(Group g)
         {
@@ -59,18 +58,17 @@ namespace TempleSignUp.Controllers
                 AvailableTimes = _repository.AvailableTimes
             });
         }
+
+        //Sign up that sets the time slot to unavailable on the common page when someone signs up
         [HttpPost]
         public IActionResult SignUp(DateTime TimeSlot)
         {
             ViewBag.Time = TimeSlot;
-            context.AvailableTimes
+            _context.AvailableTimes
                 .Where(p => p.TimeSlot == TimeSlot).FirstOrDefault().Available = false;
-            context.SaveChanges();
+            _context.SaveChanges();
 
-
-            //DateTime apptTime = at.TimeSlot;
-
-            return View("EnterInfo"/*, apptTime*/);
+            return View("EnterInfo");
         }
 
         public IActionResult ViewAppointments()
