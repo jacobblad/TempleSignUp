@@ -1,6 +1,6 @@
 ﻿<!--Display time-->
 @model Group
-
+@* user info form*@
 <form asp-action="EnterInfo" method="post">
 
     <h1>Enter Information</h1>
@@ -20,7 +20,7 @@
     <input asp-for="@Model.Email" placeholder="Enter Contact Email" required>
 
     <label asp-for="@Model.Phone"><b>Phone Number</b></label>
-    <input asp-for="@Model.Phone" placeholder="Enter Contact Phone Number" optional>
+    <input asp-for="@Model.Phone" placeholder="Enter Contact Phone Number" optional>   @* phone number is optional *@
 
     <button type="submit" class="signupbtn">Sign Up</button>
 

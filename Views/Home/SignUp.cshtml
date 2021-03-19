@@ -4,6 +4,8 @@
 @model TimeListViewModel
 
 @foreach (var x in Model.AvailableTimes)
+
+    //Loop through and display available times for selection
 {
 <div class="card">
     @if (x.Available == true)
@@ -17,12 +19,14 @@
         </h5>
     }
     @if (x.Available == false)
+
+        //loop through and display unavailable times
     {
         <h5 class="card-header">
             @x.TimeSlot
         <form id="@x.AvailableTimeId" asp-action="SignUp" method="post">
             <input type="hidden" value="@x.TimeSlot" name="TimeSlot" id="TimeSlot" />
-            <button type="button" class="btn-danger btn-sm pull-right" style="float:right">Unavailable</button>
+            <p class="btn-danger btn-sm pull-right" style="float:right">Unavailable</p>
         </form>
         </h5>
     }

@@ -33,6 +33,7 @@ namespace TempleSignUp
                 object p = options.UseSqlite(Configuration["ConnectionStrings:TempleConnection"]);
             });
 
+            //services added to be able to handle the project
             services.AddScoped<ITempleRepository, EFTempleRepository>();
 
             services.AddRazorPages();

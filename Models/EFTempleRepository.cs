@@ -6,6 +6,7 @@ using TempleSignUp.Models.ViewModels;
 
 namespace TempleSignUp.Models
 {
+    //defining the _context variable
     public class EFTempleRepository : ITempleRepository
     {
         private TempleDbContext _context;
