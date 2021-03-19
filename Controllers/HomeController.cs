@@ -18,11 +18,11 @@ namespace TempleSignUp.Controllers
 
         private AvailableTime _availableTime;
 
-        private TempleDbContext context { get; set; }
+        private TempleDbContext _context { get; set; }
 
         public HomeController(ILogger<HomeController> logger, ITempleRepository repository, TempleDbContext con)
         {
-            context = con;
+            _context = con;
             _logger = logger;
             _repository = repository;
         }
@@ -44,8 +44,8 @@ namespace TempleSignUp.Controllers
         [HttpPost]
         public IActionResult EnterInfo(Group g)
         {
-            context.Groups.Add(g);
-            context.SaveChanges();
+            _context.Groups.Add(g);
+            _context.SaveChanges();
 
             return View("Index");
         }
